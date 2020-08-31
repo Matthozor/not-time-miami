@@ -1,0 +1,166 @@
+body {
+    background-image: linear-gradient(to bottom, #c362e1, #b470eb, #a47cf3, #9487f9, #8490fc, #619fff, #3dadff, #18b8ff, #00cbff, #00dcff, #26ecf9, #5ffbf1);
+}
+
+h1 {
+    font-family: title_miami, sans-serif;
+    font-style: italic;
+    font-size: 4.3em;
+    background: -webkit-linear-gradient(#f22, #f3f7f9);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1em;
+    padding-right: 1em;
+    max-width: 690px;
+}
+
+/* Boutton New game */
+
+.miami__start {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 250px;
+}
+
+.button__miami {
+    font-family: text_miami, sans-serif;
+    font-size: 1.1em;
+    width: 30%;
+    padding: 9px;
+    border-radius: 7px;
+    text-shadow: 0.2em 0.1em 0 rgba(222, 99, 232, 0.7);
+    cursor: pointer;
+    border: 3px solid white;
+    -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+    animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+.button__miami:hover {
+    border: 3px solid #f589de;
+}
+
+/* Conteneur des personnages + personnage */
+
+.character__wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.character__contain {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    border: none;
+    cursor: pointer;
+}
+
+.character__contain:not(:last-child) {
+    margin-right: 30px;
+}
+
+.character__contain:hover {
+    border: 3px solid #f589de;
+}
+
+#billy {
+    background-image: url("images/billy.png");
+}
+#george {
+    background-image: url("images/george.png");
+}
+#clay {
+    background-image: url("images/clay.png");
+}
+
+@-webkit-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+
+/* Conteneur écran jeux */
+
+.game__container {
+    display: none;
+    width: 300px;
+    height: 20%;
+    background-color: black;
+}
+
+.game__contain {
+
+}
+
+.video {
+    margin-top: 300px;
+}
+
+/* @keyframes pulse {
+    $hello: #222222;
+
+} */
+
+/* @keyframes pulse {
+  $color-a-1: #fff;
+  $color-a-2: #b3fffb;
+  $color-b-1: #43907e;
+  $color-b-2: #ca45d7;
+  $pos-1: -.06em -.06em;
+  $pos-2: -.15em -.15em;
+  
+  0% {
+    text-shadow:
+      rgba($color-a-1, .9) $pos-1,
+      rgba($color-b-1, .9) 0 0
+  }
+  
+  33% {
+    text-shadow:
+      rgba(mix($color-a-1, $color-a-2, 33%), .9) $pos-2,
+      rgba(mix($color-b-1, $color-b-2, 33%), .9) 0 0
+  }
+  
+  66% {
+    text-shadow:
+      rgba(mix($color-a-1, $color-a-2, 66%), .9) $pos-1,
+      rgba(mix($color-b-1, $color-b-2, 33%), .9) 0 0
+  }
+  
+  100% {
+    text-shadow:
+      rgba($color-a-2, .9) $pos-2,
+      rgba($color-b-2, .9) 0 0
+  }
+} */
+
+
+
+/* @font-face {
+    font-family: "PixelNot";
+    src: url("/fonts/Pixelicious.woff2") format("woff2"),
+           url("/fonts/Pixelicious.woff") format("woff");
+   } 
+*/
+
+
+@font-face {
+    font-family: 'title_miami';
+    src: url('fonts/Retrochips.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'text_miami';
+    src: url('fonts/Fipps-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
