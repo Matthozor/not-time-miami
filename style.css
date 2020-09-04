@@ -2,41 +2,81 @@ body {
     background-image: linear-gradient(to bottom, #c362e1, #b470eb, #a47cf3, #9487f9, #8490fc, #619fff, #3dadff, #18b8ff, #00cbff, #00dcff, #26ecf9, #5ffbf1);
 }
 
-h1 {
-    font-family: title_miami, sans-serif;
-    font-style: italic;
-    font-size: 4.3em;
-    background: -webkit-linear-gradient(#f22, #f3f7f9);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+:root {
+    --red_title: #f22;
+    --white_title: #f3f7f9;
+    --black: #000;
+    --white: #ffffff;
+    --pink: #f589de;
 }
 
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1em;
-    padding-right: 1em;
-    max-width: 690px;
+.title__contain {
+    perspective: 500px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.title__main {
+    font: italic 4.3em title_miami, sans-serif;
+    background: -webkit-linear-gradient(var(--red_title), var(--white_title));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: float 9s linear infinite;
+}
+
+@keyframes float {
+	0% {
+        transform: rotateY(0deg) translateX(0px) translateY(0px) skewY(0deg);
+    }
+    25% {
+        transform: rotateY(-5deg) translateX(5px) translateY(-3px) skewY(-3deg);
+    }
+	50% {
+        transform: rotateY(0deg) translateX(0px) translateY(0px) skewY(0deg);
+    }
+    75% {
+        transform: rotateY(-5deg) translateX(-5px) translateY(3px) skewY(3deg);
+    }
+	100% {
+        transform: rotateY(0deg) translateX(0px) translateY(0px) skewY(0deg);
+	}
 }
 
 /* Boutton New game */
 
 .miami__start {
+    margin-top: 100px;
+}
+
+.miami__start, .miami__return {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 250px;
+}
+
+.miami__return {
+    margin-top: 30px;
+}
+
+.miami__players {
+    display: flex;
+    flex-direction: column;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.miami__onePlayer {
+    margin-bottom: 25px;
 }
 
 .button__miami {
-    font-family: text_miami, sans-serif;
-    font-size: 1.1em;
+    font: 1.1em text_miami, sans-serif;
     width: 30%;
     padding: 9px;
     border-radius: 7px;
     text-shadow: 0.2em 0.1em 0 rgba(222, 99, 232, 0.7);
     cursor: pointer;
-    border: 3px solid white;
+    border: 3px solid var(--white);
     -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
     -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
@@ -44,8 +84,13 @@ h1 {
 }
 
 .button__miami:hover {
-    border: 3px solid #f589de;
+    border: 3px solid var(--pink);
 }
+
+@-webkit-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
 
 /* Conteneur des personnages + personnage */
 
@@ -68,7 +113,7 @@ h1 {
 }
 
 .character__contain:hover {
-    border: 3px solid #f589de;
+    border: 3px solid var(--pink);
 }
 
 #billy {
@@ -81,75 +126,24 @@ h1 {
     background-image: url("images/clay.png");
 }
 
-@-webkit-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
-@-moz-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
-@-ms-keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
-@keyframes pulse {to {text-shadow: 0 0 0 rgba(232, 76, 61, 0);}}
-
 /* Conteneur écran jeux */
 
 .game__container {
-    display: none;
-    width: 300px;
-    height: 20%;
-    background-color: black;
+    
 }
 
 .game__contain {
-
+    width: 800px;
+    height: 500px;
+    margin: 0 auto;
+    background-color: var(--black);
 }
 
-.video {
-    margin-top: 300px;
+/* CLASSE FOR JS */
+
+.js-hidden {
+    display: none;
 }
-
-/* @keyframes pulse {
-    $hello: #222222;
-
-} */
-
-/* @keyframes pulse {
-  $color-a-1: #fff;
-  $color-a-2: #b3fffb;
-  $color-b-1: #43907e;
-  $color-b-2: #ca45d7;
-  $pos-1: -.06em -.06em;
-  $pos-2: -.15em -.15em;
-  
-  0% {
-    text-shadow:
-      rgba($color-a-1, .9) $pos-1,
-      rgba($color-b-1, .9) 0 0
-  }
-  
-  33% {
-    text-shadow:
-      rgba(mix($color-a-1, $color-a-2, 33%), .9) $pos-2,
-      rgba(mix($color-b-1, $color-b-2, 33%), .9) 0 0
-  }
-  
-  66% {
-    text-shadow:
-      rgba(mix($color-a-1, $color-a-2, 66%), .9) $pos-1,
-      rgba(mix($color-b-1, $color-b-2, 33%), .9) 0 0
-  }
-  
-  100% {
-    text-shadow:
-      rgba($color-a-2, .9) $pos-2,
-      rgba($color-b-2, .9) 0 0
-  }
-} */
-
-
-
-/* @font-face {
-    font-family: "PixelNot";
-    src: url("/fonts/Pixelicious.woff2") format("woff2"),
-           url("/fonts/Pixelicious.woff") format("woff");
-   } 
-*/
-
 
 @font-face {
     font-family: 'title_miami';

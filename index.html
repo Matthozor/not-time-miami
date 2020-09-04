@@ -6,42 +6,61 @@
         <title>Not Time Miami</title>
     </head>
     <body>
-        <h1>Not Time Miami</h1>
+        <!-- 👇 TITLE GAME 👇 -->
+        <div class="title__contain">
+            <h1 class="title__main">Not Time Miami</h1>
+        </div>
+
+        <!-- 👇 GAME CONTAINER 👇 -->
         <section class="game__container">
-            <div class="game__contain">
+
+          <!-- 👇 BUTTON NEW GAME 👇 -->
+          <div class="miami__start">
+            <button class="button__miami">New game</button>
+          </div>
+          <!-- 👇 BUTTON PLAYERS 👇 -->
+          <div class="miami__players js-hidden">
+            <div class="miami__onePlayer">
+              <button class="button__miami">1 player</button>
             </div>
-        </section>
-        <div class="character__wrapper">
+            <div class="miami__twoPlayers">
+              <button class="button__miami">2 players</button>
+            </div>
+          </div>
+
+          <!-- 👇 CHARACTERS SELECTION 👇 -->
+          <div class="character__wrapper js-hidden">
             <button id="billy" class="character__contain"></button>
             <button id="george" class="character__contain"></button>
             <button id="clay" class="character__contain"></button>
+          </div>
+
+          <div class="game__contain js-hidden">
+          </div>
+        </section>
+
+        <!-- 👇 BUTTON RETURN 👇 -->
+        <div class="miami__return js-hidden">
+          <button class="button__miami">Return</button>
         </div>
-        <div class="miami__start">
-            <button class="button__miami js-hidden">New game</button>
+
+        <section class="caracter__zone">
+          <p>Vous êtes : <span class="character__selected"></span></p>
+        </section>
+        <!-- 👇 BACKGROUND MUSIC 👇 -->
+        <div id="music__menu">
+          <audio controls autoplay loop>
+            <source src="music/deepCover.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio
+          </audio>
         </div>
-        <!-- <div class="container">
-            <p>
-              Now, for you two
-              <br>
-              ...
-            </p>
-            <p>
-              You're supposed to be killing people!
-              <br>
-              Make it look like you really hit them.
-            </p>
-          </div> -->
-          
-          <!-- 👇 BACKGROUND MUSIC 👇 -->
-          <!-- <div class="container video">
-            <object
-              type="application/x-shockwave-flash"
-              width="200"
-              height="200"
-              data="https://www.youtube.com/v/go6po2Za_18?version=2&autoplay=1&loop=1&hd=1&theme=dark">
-             <param name="movie" value="https://www.youtube.com/v/dvgZkm1xWPE?version=2&autoplay=1&loop=1&hd=1&theme=dark" />
-             <param name="wmode" value="transparent" />
-            </object>
-          </div> -->
+        
+        <div id="music__game">
+          <audio autoplay loop>
+            <source src="music/hydrogen.mp3" type="audio/mp3">
+            Votre navigateur ne supporte pas la balise audio
+          </audio>
+        </div>
+        <script type="text/javascript" src="game.js"></script>
     </body>
 </html>
