@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'title_miami';
+    src: url('fonts/Retrochips.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: 'text_miami';
+    src: url('fonts/Fipps-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+  }
+
 body {
     background-image: linear-gradient(to bottom, #c362e1, #b470eb, #a47cf3, #9487f9, #8490fc, #619fff, #3dadff, #18b8ff, #00cbff, #00dcff, #26ecf9, #5ffbf1);
 }
@@ -129,7 +143,7 @@ body {
 /* Conteneur écran jeux */
 
 .game__container {
-    
+    text-align: center;
 }
 
 .game__contain {
@@ -144,17 +158,3 @@ body {
 .js-hidden {
     display: none;
 }
-
-@font-face {
-    font-family: 'title_miami';
-    src: url('fonts/Retrochips.otf');
-    font-weight: normal;
-    font-style: normal;
-  }
-  
-  @font-face {
-    font-family: 'text_miami';
-    src: url('fonts/Fipps-Regular.otf');
-    font-weight: normal;
-    font-style: normal;
-  }
